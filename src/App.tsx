@@ -1,13 +1,16 @@
-import { Form } from './components/Form'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Form } from "./components/Form";
+import { SuccessPage } from "./components/SuccessPage";
 
 function App() {
-
   return (
-    <div className="bg-zinc-100 min-h-screen w-full flex flex-col items-center gap-6 pt-8">
-      <h1 className="font-bold text-3xl">Cadastre-se</h1>
-      <Form />
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Form />} />
+        <Route path="/success" element={<SuccessPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
